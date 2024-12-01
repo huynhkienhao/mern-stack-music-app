@@ -1,6 +1,7 @@
 {
   "name": "mern-stack-music-app",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd api && npm start",
@@ -13,5 +14,10 @@
     "react-helmet": "^6.1.0",
     "react-share": "^5.1.0",
     "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0"
   }
 }

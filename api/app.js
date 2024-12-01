@@ -18,7 +18,6 @@ const playListRouter = require("./routes/PlaylistRoutes");
 const multer = require("multer");
 const adminRoutes = require("./routes/adminRoutes"); // Đường dẫn tới file router của bạn
 const listeningHistoryRoute = require("./routes/listeningHistory");
-const { PlayList } = require("../front/src/Components/PlayList");
 // const songRouter = require("./routes/song");
 
 // Load environment variables
