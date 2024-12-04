@@ -26,7 +26,8 @@ const Topbar = ({ setIsLoggedIn }) => {
   // }
   const handleLogout = async () => {
     await localStorage.removeItem("token");
-    window.location.reload();
+    // window.location.reload();
+    window.location.href = "/login";
   };
   return (
     <Box display="flex" justifyContent="space-between" p={2}>

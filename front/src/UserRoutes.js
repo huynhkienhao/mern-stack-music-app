@@ -45,7 +45,7 @@ function UserRoutes(props) {
     <div className="App">
       <Fragment>
         {/* <CssBaseline /> */}
-        <Router>
+        
           <LeftMenu> </LeftMenu>
           <main className="contents">
             {/* <Topbar setIsSidebar={setIsSidebar} setIsLoggedIn={setIsLoggedIn} /> */}
@@ -83,7 +83,7 @@ function UserRoutes(props) {
               </Route>
             </Switch>
           </main>
-        </Router>
+        
       </Fragment>
 
       <div className="background"></div>

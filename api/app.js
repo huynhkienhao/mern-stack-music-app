@@ -2,12 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const User = require("./models/AdminUser");
-const Favorites = require("./models/Favorites");
-const Song = require("./models/Song");
-const Category = require("./models/Category");
 const cookieParser = require("cookie-parser");
 const adminRouter = require("./routes/auth");
 
@@ -15,10 +10,7 @@ const categoryRouter = require("./routes/category");
 const songRouter = require("./routes/song");
 const favoriteRouter = require("./routes/favorite");
 const playListRouter = require("./routes/PlaylistRoutes");
-const multer = require("multer");
-const adminRoutes = require("./routes/adminRoutes"); // Đường dẫn tới file router của bạn
-const listeningHistoryRoute = require("./routes/listeningHistory");
-// const songRouter = require("./routes/song");
+const adminRoutes = require("./routes/adminRoutes");
 
 // Load environment variables
 require("dotenv").config();
@@ -93,11 +85,6 @@ app.get("/api/suggested-songs", (req, res) => {
 console.log("MongoDB URL:", process.env.MONGO_URL);
 console.log("JWT Secret:", process.env.JWT_SECRET);
 
-// // Khởi động server
-// app.listen(port, () => {
-//   console.log(`Server is running on http://localhost:${port}`);
-// });
-
 // Routes for songs and categories
 app.use("/api", adminRouter);
 app.use("/api", songRouter);
@@ -105,10 +92,7 @@ app.use("/api", categoryRouter);
 app.use("/api", favoriteRouter);
 app.use("/api", playListRouter);
 app.use("/api", adminRoutes);
-// app.use("/api/admin", adminRoutes); // Cấu hình để các route bắt đầu với /api/admin
-// app.use("/api", listeningHistoryRoute);
-// // Sử dụng route songRouter cho các đường dẫn bắt đầu bằng '/api'
-// app.use("/api", songRouter);
+
 // Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

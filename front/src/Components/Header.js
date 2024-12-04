@@ -1,12 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+// import { useHistory } from "react-router-dom";
 import "../styles/search.css";
 
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 
 export default function Header() {
-  const history = useHistory();
+  // const history = useHistory();
 
   // Xử lý logout
   const handleLogout = () => {
@@ -15,12 +14,14 @@ export default function Header() {
     localStorage.removeItem("user");
 
     // Chuyển hướng người dùng về trang login
-    history.push("/login");
+    // history.push("/login");
+    window.location.href = "/login";
   };
 
   const handleButtonClick = () => {
     // Push a new entry onto the history stack
-    history.push("/liked");
+    // history.push("/liked");
+    window.location.href = "/liked";
   };
 
   return (
@@ -52,7 +53,7 @@ export default function Header() {
           <button className="relative group flex items-center rounded-md overflow-hidden gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20 transition pr-4">
             <div className="relative min-h-[64px] min-w-[64px]">
               <img
-                alt="Image"
+                alt=""
                 loading="lazy"
                 decoding="async"
                 data-nimg="fill"

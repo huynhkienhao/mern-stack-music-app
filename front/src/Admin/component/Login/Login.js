@@ -27,10 +27,13 @@ const Login = () => {
         // Điều hướng dựa trên vai trò (role) của user
         const userRole = response.data.user.role;
         if (userRole === "admin") {
-          history.push("/admin"); // Điều hướng tới dashboard admin
+          // history.push("/admin"); // Điều hướng tới dashboard admin
+          window.location.href = "/admin";
         } else {
-          history.push("/"); // Điều hướng tới trang chính của user
+          // history.push("/"); // Điều hướng tới trang chính của user
+          window.location.href = "/";
         }
+        
       }
     } catch (error) {
       // Hiển thị lỗi nếu login thất bại

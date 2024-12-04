@@ -1,5 +1,3 @@
-// App.js
-
 import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -47,6 +45,7 @@ function App() {
             <Route path="*">
               <div>404 - Page Not Found</div>
             </Route>
+            
           </Switch>
         </div>
       </Router>
