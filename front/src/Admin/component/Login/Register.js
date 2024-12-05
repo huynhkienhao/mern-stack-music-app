@@ -87,7 +87,8 @@ export default function Register() {
 
   useEffect(() => {
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
-      history.push("/login");
+      // history.push("/login");
+      window.location.href = "/login";
     }
   }, [history]);
 
@@ -96,7 +97,8 @@ export default function Register() {
   };
 
   const handleValidation = () => {
-    const { password, confirmPassword, username, email } = values;
+    // const { password, confirmPassword, username, email } = values;
+    const { password, confirmPassword, username } = values;
     if (password !== confirmPassword) {
       console.error("Password and confirm password should be the same.");
       return false;
@@ -129,7 +131,8 @@ export default function Register() {
 
         if (response.data.status === true) {
           console.log("Registration successful");
-          history.push("/login"); // Điều hướng đến login
+          // history.push("/login"); // Điều hướng đến login
+          window.location.href = "/login";
         }
       } catch (error) {
         console.error("An error occurred while registering:", error);
