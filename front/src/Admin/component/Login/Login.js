@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./Login.css"; // Import CSS riêng
+import "./Login.css";
+import { loginRoute } from "../../utils/APIRoutes";
+import { jwtDecode } from "jwt-decode";
+
 
 const Login = () => {
   // const history = useHistory(); // Hook dùng để điều hướng
@@ -14,10 +17,16 @@ const Login = () => {
 
     try {
       // Gửi request login tới server
-      const response = await axios.post("http://localhost:4000/api/login", {
+      const response = await axios.post(loginRoute, {
         username,
         password,
       });
+
+      if (response.status === 200) {
+        const token = response.data.token;
+        const userLogin = jwtDecode(token);
+        console.log(userLogin);
+      }
 
       if (response.data && response.data.token) {
         // Lưu token và thông tin user vào localStorage

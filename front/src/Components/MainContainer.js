@@ -64,27 +64,21 @@ function MainContainer(props) {
     
       <div className="menuList">
       <ul>
-  <li>
-    <button
-      className="filter-btn"
-      onClick={() => handleCategoryClick("All")} // Handle click for "All" category
-    >
-      All
-    </button>
-  </li>
-  {props.categories.map((category) => (
-    <li key={category.id}>
-      <button
-        className="filter-btn"
-        onClick={() => handleCategoryClick(category.name)}
-      >
-        {category.name}
-      </button>
-    </li>
-  ))}
-</ul>
+        <li>
+          <button className="filter-btn" onClick={() => handleCategoryClick("All")}>All</button>
+        </li>
+        {props.categories.map((value,key) => (
+        <li key={key}>
+          <button className="filter-btn" onClick={() => handleCategoryClick(value.name)}>{value.name}</button>
+        </li>
+        // {props.categories.map((category) => (
+        //   <li key={category.id}>
+        //     <button className="filter-btn" onClick={() => handleCategoryClick(category.name)}>{category.name}</button>
+        //   </li>
+        ))}
+      </ul>
 
-        <p>
+        <div>
           <div className="searchBox">
             <input
               type="text"
@@ -95,7 +89,7 @@ function MainContainer(props) {
               <BiSearchAlt />
             </i>
           </div>
-        </p>
+        </div>
       </div>
       <br /><br /><br />
       <section className='slider'>
